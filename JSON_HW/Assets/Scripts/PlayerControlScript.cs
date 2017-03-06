@@ -29,6 +29,11 @@ public class PlayerControlScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (playerHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
         //Call the move function with a direction and a key
         //Move(Vector3.up, upKey);
         Vector3 jumpVelocity = GetComponent<Rigidbody>().velocity;
