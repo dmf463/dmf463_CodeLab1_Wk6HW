@@ -38,11 +38,11 @@ public class PlayerControlScript : MonoBehaviour {
         }
         if (Input.GetKeyDown(leftKey))
         {
-            transform.localScale = new Vector3 (-1, 1, 1);
+            transform.localScale = new Vector3 (-1, 2, 1);
         }
         if (Input.GetKeyDown(rightKey))
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, 2, 1);
         }
         if (Input.GetKeyDown(shootKey))
         {
