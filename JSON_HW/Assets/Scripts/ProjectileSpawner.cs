@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour {
 
+    public float damage;
     public GameObject projectilePrefab;
     public float firingSpeed;
     public GameObject player;
@@ -37,6 +38,7 @@ public class ProjectileSpawner : MonoBehaviour {
     {
         Vector2 projectilePos = new Vector3(projectilePosX, projectilePosY);
         GameObject projectile = Instantiate(projectilePrefab, projectilePos, Quaternion.identity) as GameObject;
+        projectile.transform.parent = gameObject.transform;
         if (this.transform.localScale.x == (-1))
         {
             projectile.GetComponent<Rigidbody>().velocity = new Vector3(-firingSpeed, 0, 0);

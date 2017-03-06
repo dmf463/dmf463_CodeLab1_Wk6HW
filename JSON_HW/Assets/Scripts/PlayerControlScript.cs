@@ -11,6 +11,7 @@ public class PlayerControlScript : MonoBehaviour {
     public float jumpSpeed;
     bool isJumping = false;
     ProjectileSpawner projectileSpawner;
+    public float playerHealth;
 
 	//public keyboard keys for controlling movement
 	public KeyCode upKey = KeyCode.W;
