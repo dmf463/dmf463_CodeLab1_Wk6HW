@@ -9,10 +9,14 @@ using System;
 
 public class CharacterChoiceScript : MonoBehaviour {
 
+    GameObject powerLevels;
+    PowerLevelScripts pl;
 
 	// Use this for initialization
 	void Start () {
 
+        powerLevels = GameObject.Find("PlayerPowerLevels");
+        pl = powerLevels.GetComponent<PowerLevelScripts>();
         ChooseCharacter("miami", "fl");
 		
 	}
@@ -56,7 +60,28 @@ public class CharacterChoiceScript : MonoBehaviour {
         JSONNode place = JSON.Parse(content);
         string temp = place["query"]["results"]["channel"]["item"]["condition"]["temp"];
         print(temp);
-        
+        float tempFloat = float.Parse(temp);
+        pl.PlayerPowerLevels.Add(tempFloat);  
+    }
+
+    public void ChooseMiami()
+    {
+        ChooseCharacter("miami", "fl");
+    }
+
+    public void ChooseNY()
+    {
+        ChooseCharacter("newyork", "ny");
+    }
+
+    public void ChooseCarson()
+    {
+        ChooseCharacter("carsoncity", "nv");
+    }
+
+    public void ChooseDetroit()
+    {
+        ChooseCharacter("detroit", "mi");
     }
 
 
