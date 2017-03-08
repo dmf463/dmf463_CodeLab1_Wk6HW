@@ -6,23 +6,29 @@ using SimpleJSON;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterChoiceScript : MonoBehaviour {
 
     GameObject powerLevels;
     PowerLevelScripts pl;
+    public float clickCount = 0;
 
 	// Use this for initialization
 	void Start () {
 
         powerLevels = GameObject.Find("PlayerPowerLevels");
         pl = powerLevels.GetComponent<PowerLevelScripts>();
-        ChooseCharacter("miami", "fl");
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(clickCount == 2)
+        {
+            SceneManager.LoadScene("WeatherFighter");
+        }
 		
 	}
 
@@ -67,21 +73,25 @@ public class CharacterChoiceScript : MonoBehaviour {
     public void ChooseMiami()
     {
         ChooseCharacter("miami", "fl");
+        clickCount += 1;
     }
 
     public void ChooseNY()
     {
         ChooseCharacter("newyork", "ny");
+        clickCount += 1;
     }
 
     public void ChooseCarson()
     {
         ChooseCharacter("carsoncity", "nv");
+        clickCount += 1;
     }
 
     public void ChooseDetroit()
     {
         ChooseCharacter("detroit", "mi");
+        clickCount += 1;
     }
 
 

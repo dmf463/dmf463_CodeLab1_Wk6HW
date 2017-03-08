@@ -16,6 +16,18 @@ public class ProjectileSpawner : MonoBehaviour {
     void Start()
     {
 
+        if (gameObject.name == "Player")
+        {
+            damage = GameObject.Find("PlayerPowerLevels").GetComponent<PowerLevelScripts>().PlayerPowerLevels[0];
+            Debug.Log(gameObject.name + " does " + damage + " damage!");
+        }
+
+        if (gameObject.name == "Player2")
+        {
+            damage = GameObject.Find("PlayerPowerLevels").GetComponent<PowerLevelScripts>().PlayerPowerLevels[1];
+            Debug.Log(gameObject.name + " does " + damage + " damage!");
+        }
+
     }
 
     // Update is called once per frame
